@@ -5,6 +5,21 @@ CURVE_RESOLUTION = 50
 
 class QuadraticCurve(Segment):
     def __init__(self, start, control, end):
+        """
+        Initializes a QuadraticCurve object with given start, control, and end points.
+        This constructor generates a quadratic Bezier curve based on the provided points
+        and stores the generated path. It also performs arc-length parametrization to 
+        normalize the path.
+        ## Args:
+            start (tuple): The starting point of the curve (x, y).
+            control (tuple): The control point of the curve (x, y).
+            end (tuple): The ending point of the curve (x, y).
+        ## Example:
+            >>> start = (0, 0)
+            >>> control = (1, 2)
+            >>> end = (2, 0)
+            >>> curve = QuadraticCurve(start, control, end)
+        """
         # Store characteristic points
         self.start = start
         self.control = control

@@ -4,6 +4,16 @@ CURVE_RESOLUTION = 50
 
 class CubicCurve(Segment):
     def __init__(self, start, control_1, control_2, end):
+        """
+        Initializes a cubic Bezier curve with the given characteristic points.
+        ## Args:
+            start (tuple): The starting point of the curve (x, y).
+            control_1 (tuple): The first control point of the curve (x, y).
+            control_2 (tuple): The second control point of the curve (x, y).
+            end (tuple): The ending point of the curve (x, y).
+        ## Example:
+            >>> curve = CubicCurve((0, 0), (1, 2), (3, 2), (4, 0))
+        """
         # Store characteristic points
         self.start = start
         self.control_1 = control_1
