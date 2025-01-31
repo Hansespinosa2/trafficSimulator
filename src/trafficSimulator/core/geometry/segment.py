@@ -40,18 +40,17 @@ class Segment(ABC):
     def remove_vehicle(self, veh):
         self.vehicles.remove(veh.id)
 
-    @abstractmethod
     def compute_x(self, t):
-        pass
-    @abstractmethod
+        return self.start[0] + t * self.delta[0]
+
     def compute_y(self, t):
-        pass
-    @abstractmethod
+        return self.start[1] + t * self.delta[1]
+
     def compute_dx(self, t):
-        pass
-    @abstractmethod
+        return self.delta[0]
+
     def compute_dy(self, t):
-        pass
+        return self.delta[1]
 
     def abs_f(self, t):
         return sqrt(self.compute_dx(t)**2 + self.compute_dy(t)**2)
